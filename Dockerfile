@@ -4,7 +4,7 @@ FROM node:lts-buster
 COPY package.json .
 
 
-RUN npm install
+RUN npm install -- --legacy-peer-deps
 
 COPY . .
 
