@@ -1,19 +1,19 @@
-# Use stable Node LTS
+# Use stable Node 22 LTS (bullseye)
 FROM node:22-bullseye
 
 # Set working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Copy package files
 COPY package.json package-lock.json* ./
 
-# Install dependencies with legacy-peer-deps to bypass conflicts
+# Install dependencies using legacy-peer-deps to resolve conflicts
 RUN npm install --legacy-peer-deps
 
-# Copy rest of the code
+# Copy all app code
 COPY . .
 
-# Expose port (adjust if needed)
+# Expose port for QR code server if used
 EXPOSE 3000
 
 # Start the bot
