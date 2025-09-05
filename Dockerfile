@@ -1,5 +1,6 @@
-# Use stable Node 22 LTS (bullseye)
-FROM node:22-bullseye
+# Use Node 20 base image
+FROM node:20
+
 
 # Set working directory
 WORKDIR /app
